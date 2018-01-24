@@ -10,11 +10,11 @@ interface Server {
   status: string;
 }
 
-@Injectable()
-export class RecipeResolver implements Resolve<Server> {
-  constructor(private recipesService: RecipeService) {}
+//@Injectable()
+// export class RecipeResolver implements Resolve<Server> {
+//   constructor(private recipesService: RecipeService) {}
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Server> | Promise<Server> | Server {
-    return this.recipesService.getRecipes();
-  }
-}
+//   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Server> | Promise<Server> | Server {
+//     return this.recipesService.getRecipes();
+//   }
+// }
