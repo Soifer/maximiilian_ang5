@@ -16,7 +16,8 @@ import {ShoppingListService} from './shopping-list/shopping-list.service';
 import { AppRoutingModule } from './app-routing.module';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
-
+import { Socket,SocketIo,SocketStomp } from './model';
+import { ButtonPanelComponent } from './button-panel/button-panel.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     HeaderComponent,
     DropdownDirective,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    ButtonPanelComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ShoppingListService],
+  providers: [ShoppingListService, {provide: Socket, useClass: SocketStomp}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

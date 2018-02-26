@@ -1,0 +1,19 @@
+<div>
+  <div class="flex-inline-container">
+    <span [ngClass]="{toggled: toggle, untoggled: !toggle}" class="glyphicon glyphicon-option-horizontal"
+     *ngIf="intercepts.length > DISPLAY_ELEMENTS "
+      (click)="onClick()"></span>
+    <div *ngFor="let item of getLineElements()">
+      <div class="">{{item}}
+        <span class="glyphicon glyphicon-user user"></span>
+      </div>
+    </div>
+  </div>
+  <div class="column-wrapper" [ngClass]="{'column-untoggled' : !toggle, 'column-toggled': toggle}" >
+    <div class="flex-column-container" *ngFor="let item of getColumnElements()">
+      <div class="">{{item}}
+        <span class="glyphicon glyphicon-user user"></span>
+      </div>
+    </div>
+  </div>
+</div>

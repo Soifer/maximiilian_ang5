@@ -1,0 +1,108 @@
+.flex-inline-container {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 80%;
+    justify-content: flex-start;
+    background-color: DodgerBlue;
+  }
+  
+  .flex-inline-container > div {
+    background-color: #d6da22;
+    width: 150px;
+    margin: 10px;
+    border-radius: 25px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+  }
+
+  .user {
+    height: 40px;
+    width: 50px;
+    padding: 5px;
+    background-color: aqua;
+    border-radius: 30px;  
+  }
+
+  .flex-inline-container > span {
+    background-color: rgb(101, 201, 87);
+    width: 100px;
+    margin: 10px;
+    border-radius: 50px;
+    line-height: 75px;
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+ .flex-column-container{
+    display: column ;
+    flex-wrap: nowrap;
+ }
+
+ .flex-column-container > div {
+    background-color: #d6da22;
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+    border-radius: 25px;
+  }
+
+.column-wrapper{
+  position:absolute;
+  z-index: 10;
+  background-color: DodgerBlue;
+}
+
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeout {
+  from { opacity: 1; visibility: visible;}
+  to   { opacity: 0; }
+
+}
+
+@keyframes toggle {
+  from { transform: rotate(0deg);}
+  to   { transform: rotate(90deg);}
+}
+
+@keyframes untoggle {
+  from { transform: rotate(90deg);}
+  to   { transform: rotate(0deg);}
+}
+
+.column-toggled {
+  animation-name: fadein;
+  animation-duration: 1s;
+  animation-delay: 0s;
+ 
+}
+
+.column-untoggled {
+  animation-name: fadeout;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  visibility: hidden;
+}
+
+
+.toggled{
+  animation-name: toggle;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  transform: rotate(90deg);
+}
+
+.untoggled{
+  animation-name: untoggle;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  transform: rotate(0deg);
+}
